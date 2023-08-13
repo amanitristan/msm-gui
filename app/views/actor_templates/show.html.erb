@@ -16,30 +16,28 @@
   <div>
     <label for="name_field">Name</label>
     <input id="name_field" type="text" name="the_name" value="<%= @the_actor.name %>"></input>
-  </div>
+</div>
 
-  <div>
-    <label for="dob_field">Dob</label>
-    <input id="dob_field" type="text" name="the_dob" value="<%= @the_actor.dob %>"></input>
-  </div>
+<div>
+  <label for="dob_field">Dob</label>
+  <input id="dob_field" type="text" name="the_dob" value="<%= @the_actor.dob %>"></input>
+</div>
 
-  <div>
-    <label for="bio_field">Bio</label>
-    <input id="bio_field" type="text" name="the_bio" value="<%= @the_actor.bio %>"></input>
-  </div>
+<div>
+  <label for="bio_field">Bio</label>
+  <input id="bio_field" type="text" name="the_bio" value="<%= @the_actor.bio %>"></input>
+</div>
 
-  <div>
-    <label for="image_field">Image</label>
-    <input id="image_field" type="text" name="the_image" value="<%= @the_actor.image %>"></input>
-  </div>
+<div>
+  <label for="image_field">Image</label>
+  <input id="image_field" type="text" name="the_image" value="<%= @the_actor.image %>"></input>
+</div>
 
-  <button>Update actor</button>
+<button>Update actor</button>
 
 </form>
 
 <hr>
-
-
 
 <dl>
   <dt>
@@ -133,9 +131,9 @@
 
       <td>
         <% d_id = the_movie.director_id %>
-        
+
         <% matching_directors = Director.where({ :id => d_id }) %>
-        
+
         <% the_director = matching_directors.at(0) %>
 
         <%= the_director.name %>
