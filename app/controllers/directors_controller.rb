@@ -1,4 +1,25 @@
 class DirectorsController < ApplicationController
+  def update
+    # Get the ID out of params
+    d_id = params.fetch("the_id")
+
+    # Loop up the exsiting record
+    matching_records = Director.where({ id: d_id })
+    the_director = matching_records.at(0)
+
+    # Overwrite each column with the values from user inputs
+    the_director.name = params.fetch("the_name")
+    the_director.dob = params.fetch("the_dob")
+    the_director.bio = params.fetch("the_bio")
+    the_director.image = params.fetch("the_image")
+
+    # Save
+    the_director.save
+
+    # Redirect to the director details page
+    redirect_to("/directors/#{the_director.id}")
+  end
+
   def create
     a = Director.new
     a.name = params.fetch("the_name")
